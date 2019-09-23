@@ -35,10 +35,12 @@ hierarchy:
   - name: "Pass data_hash"
     datadir: "/home/foo/.password-store"
     data_hash: pass_data
+    # Will return the value of key in YAML from $datadir/$::project/*.gpg
     glob: "%{::project}/*.gpg"
   - name: "Pass lookup_key"
     datadir: "/home/foo/.password-store"
     lookup_key: pass_lookup_key
+    # Will return the YAML content of $datadir/$::project/$key.gpg if it exists
     path: "%{::project}"
   - name: "Common"
     path: common.yaml
