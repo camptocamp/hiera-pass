@@ -2,7 +2,7 @@ Hiera data_hash for pass repository
 ===================================
 
 This Puppet module provides a `data_hash` function for Hiera to look up keys in
-pass GPG password repositories.
+pass GnuPG password repositories.
 
 
 ## Usage
@@ -15,7 +15,7 @@ You need to install the `ruby_gpg` gem on your Puppet Master:
 $ puppetserver gem install ruby_gpg
 ```
 
-You also need to GPG key for your Puppet Master, allowed to decipher the
+You also need to GnuPG key for your Puppet Master, allowed to decipher the
 passwords in your pass store.
 
 
@@ -37,3 +37,10 @@ hierarchy:
   - name: "Common"
     path: common.yaml
 ```
+
+### Usage
+
+The `pass_data` Hiera backend works just like the `yaml_data` backend, except
+it uses GnuPG-encrypted YAML data (following the pass standard).
+
+
