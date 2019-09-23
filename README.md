@@ -1,7 +1,7 @@
 Hiera data_hash for pass repository
 ===================================
 
-This Puppet module provides a `data_hash` function for Hiera to look up keys in
+This Puppet module provide two Hiera backends to look up keys in
 pass GnuPG password repositories.
 
 
@@ -21,7 +21,9 @@ passwords in your pass store.
 
 ### Setup
 
-In your `hiera.yaml`, set the `data_hash` key to `pass_data`, e.g.:
+
+Example set up with both `data_hash` and `lookup_key` backends:
+
 
 ```yaml
 ---
@@ -30,10 +32,14 @@ defaults:
   datadir: data
   data_hash: yaml_data
 hierarchy:
-  - name: "Pass"
+  - name: "Pass data_hash"
     datadir: "/home/foo/.password-store"
     data_hash: pass_data
     glob: "%{::project}/*.gpg"
+  - name: "Pass lookup_key"
+    datadir: "/home/foo/.password-store"
+    lookup_key: pass_lookup_key
+    path: "%{::project}"
   - name: "Common"
     path: common.yaml
 ```
@@ -43,4 +49,6 @@ hierarchy:
 The `pass_data` Hiera backend works just like the `yaml_data` backend, except
 it uses GnuPG-encrypted YAML data (following the pass standard).
 
+The `pass_lookup_key` Hiera backend uses the key as the file name to look for
+and returns the YAML hash parsed at that location if the file exists.
 
