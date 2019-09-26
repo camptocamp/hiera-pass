@@ -1,5 +1,5 @@
 {
-  "name": "camptocamp-pass",
+  "name": "camptocamp-hiera_pass",
   "version": "0.1.0",
   "author": "Camptocamp",
   "summary": "Hiera backend for pass password-store",
