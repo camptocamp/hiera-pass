@@ -2,9 +2,9 @@
   "name": "camptocamp-pass",
   "version": "0.1.0",
   "author": "Camptocamp",
-  "summary": "",
+  "summary": "Hiera backend for pass password-store",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/camptocamp/hiera-pass",
   "dependencies": [
 
   ],
