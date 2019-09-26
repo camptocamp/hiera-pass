@@ -5,6 +5,7 @@
   "summary": "Hiera backend for pass password-store",
   "license": "Apache-2.0",
   "source": "https://github.com/camptocamp/hiera-pass",
+  "issues_url": "https://github.com/camptocamp/hiera-pass/issues",
   "dependencies": [
 
   ],
